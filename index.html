@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tense Traveller</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable dark mode using a class
+        theme: {
+          extend: {
+            colors: {
+              // Light Mode Palette (adjustments for better aesthetics)
+              primary: '#3b82f6',      // blue-500
+              secondary: '#22c55e',    // green-500
+              accent: '#f97316',       // orange-600
+              background: '#f8fafc',   // slate-50
+              surface: '#ffffff',      // white
+              textPrimary: '#1e293b',  // slate-800
+              textSecondary: '#64748b',// slate-500
+              borderLight: '#e2e8f0',  // slate-200
+
+              // Dark Mode Palette
+              primaryDark: '#60a5fa',   // blue-400
+              secondaryDark: '#4ade80', // green-400
+              accentDark: '#fb923c',    // orange-400
+              backgroundDark: '#0f172a',// slate-900
+              surfaceDark: '#1e293b',   // slate-800
+              textPrimaryDark: '#f1f5f9', // slate-100
+              textSecondaryDark: '#94a3b8',// slate-400
+              borderDark: '#334155',     // slate-700
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.2.0"
+  }
+}
+</script>
+<style>
+  /* Apply selection styles based on dark mode */
+  ::selection {
+    background-color: #f97316; /* accent */
+    color: #ffffff; /* white */
+  }
+  .dark ::selection {
+    background-color: #fb923c; /* accentDark */
+    color: #0f172a; /* backgroundDark */
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+</style>
+</head>
+  <body class="bg-background dark:bg-backgroundDark transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
